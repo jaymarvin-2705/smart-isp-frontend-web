@@ -1,27 +1,17 @@
-import { Outlet } from "react-router-dom";
-
-import Sidebar from "@/components/layout/Sidebar";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import Breadcrumb from "@/components/layout/Breadcrumb";
+// src/layouts/AdminLayout.jsx
+import { Outlet } from 'react-router-dom';
+import Sidebar from '../components/layout/Sidebar';
+import Navbar from '../components/layout/Navbar';
 
 export default function AdminLayout() {
   return (
-    <div className="min-h-screen bg-slate-100">
-      <div className="flex">
-        <Sidebar />
-
-        <div className="flex flex-1 flex-col">
-          <Navbar />
-
-          <main className="flex-1 p-6">
-            <Breadcrumb />
-
-            <Outlet />
-          </main>
-
-          <Footer />
-        </div>
+    <div className="flex min-h-screen bg-slate-50">
+      <Sidebar />
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <Navbar />
+        <main className="flex-1 overflow-y-auto p-6">
+          <Outlet />
+        </main>
       </div>
     </div>
   );

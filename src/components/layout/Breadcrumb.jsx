@@ -1,24 +1,11 @@
-import { useLocation } from "react-router-dom";
-
 export default function Breadcrumb() {
+    return (
 
-  const location = useLocation();
+        <div className="text-sm text-gray-500 mb-4">
 
-  const current =
-    location.pathname.split("/")[1] || "dashboard";
+            Home
 
-  return (
-    <div className="mb-6 text-gray-500">
+        </div>
 
-      Dashboard /
-
-      <span className="font-semibold capitalize">
-
-        {" "}
-        {current}
-
-      </span>
-
-    </div>
-  );
+    );
 }
